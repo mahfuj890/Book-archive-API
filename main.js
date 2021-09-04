@@ -8,13 +8,13 @@ button.addEventListener("click", () => {
 // Import API
 function getSearchValue() {
   let inputValue = input.value;
-  console.log(inputValue);
+
   if (input.value == "") {
     alert("please wirte book name");
   }
   input.value = "";
   const url = `https://openlibrary.org/search.json?q=${inputValue}`;
-  console.log(url);
+
   fetch(url)
     .then((res) => res.json())
 
@@ -31,8 +31,6 @@ const dsiplayBook = (books) => {
   let bookDiv = document.querySelector(".book_items_area");
   bookDiv.textContent = " ";
   books.docs.forEach((book) => {
-    console.log(book);
-    console.log();
     const div = document.createElement("div");
     div.classList.add("col-md-4");
 
